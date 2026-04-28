@@ -102,7 +102,7 @@ PyJWT==2.12.1
 python-dateutil==2.9.0.post0
 pytz==2025.2
 tzdata==2025.2
-python-dotenv==1.1.1
+python-dotenv==1.2.2
 PyYAML==6.0.3
 pyyaml_env_tag==1.1
 wrapt==1.17.3
