@@ -40,10 +40,10 @@ Node.js uses parent directory resolution: if a package isn't found in `/home/ass
 
 ## Versioning
 
-Format: `v0.8.X.Y` — the first three segments (`0.8.X`) track the **Open WebUI** base version this project is built on. Never bump them independently.
+Format: `v0.8.X.Y` — the first three segments (`0.8.X`) track the **MCP client** base version this project is built on. Never bump them independently.
 
 - **Patch release** (`Y+1`): bug fixes, security patches, dependency bumps, test additions → e.g. `v0.8.12.3` → `v0.8.12.4`
-- **Minor release** (`X+1`, reset `Y=0`): new features, new tools, significant changes → only when Open WebUI base version also bumps
+- **Minor release** (`X+1`, reset `Y=0`): new features, new tools, significant changes → only when MCP client base version also bumps
 
 To release:
 1. Update `CHANGELOG.md` with the new version heading
@@ -54,12 +54,10 @@ To release:
 
 - `Dockerfile` — Sandbox container image (Ubuntu 24.04, Python, Node.js, CDP, ttyd)
 - `computer-use-server/` — MCP orchestrator (FastAPI, Docker management, CDP/terminal proxy)
-- `openwebui/` — Open WebUI integration (tools, functions, patches)
 - `skills/` — AI skills (pptx, xlsx, docx, pdf, sub-agent, playwright-cli, etc.)
 - `docs/` — Documentation
 - `tests/` — Test scripts
-- `docker-compose.yml` — Computer Use Server
-- `docker-compose.webui.yml` — Open WebUI + PostgreSQL (connects to server via `host.docker.internal`)
+- `docker-compose.yml` — Computer Use Server (MCP endpoint at port 8081)
 
 ## License Headers
 
