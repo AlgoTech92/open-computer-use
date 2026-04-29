@@ -286,7 +286,8 @@ _STATIC_INSTRUCTIONS = (
 mcp = FastMCP(
     name="computer-use-mcp",
     instructions=_STATIC_INSTRUCTIONS,
-    streamable_http_path="/",       # Root path — mounted at /mcp in FastAPI
+    streamable_http_path="/",       # Streamable HTTP - mounted at /mcp in FastAPI
+    sse_path="/sse",                # SSE transport for n8n and older clients
     stateless_http=True,            # Each request is independent (no session persistence)
     transport_security={            # Behind proxy (LiteLLM/nginx), any Host is valid
         "enable_dns_rebinding_protection": False,
