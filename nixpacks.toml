@@ -1,10 +1,10 @@
 # Nixpacks configuration for Coolify deployment
 # Deploys the Computer Use MCP Server (computer-use-server/)
 
-[[build]]
+[build]
   cmd = "cd computer-use-server && pip install --no-cache-dir -r requirements.txt"
 
-[[start]]
+[start]
   cmd = "cd computer-use-server && uvicorn app:app --host 0.0.0.0 --port 8081 --workers 2"
 
 [metadata]
@@ -14,7 +14,7 @@
   healthcheck = "/health"
 
 # Environment variables (override in Coolify UI)
-# MCP_API_KEY=your-secret-key
+# MCP_API_KEY=***
 # DOCKER_IMAGE=open-computer-use:latest
 # PUBLIC_BASE_URL=https://your-domain.com
 # COMMAND_TIMEOUT=600
