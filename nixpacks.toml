@@ -2,13 +2,6 @@
 # Deploys the Computer Use MCP Server (computer-use-server/)
 # NOTE: This is a Python project. The package.json is for the workspace Docker image only.
 
-[phases]
-  # Skip npm install — this is a Python project!
-  # The package.json is for the workspace image (Dockerfile), not the MCP server.
-  install = """
-    cd computer-use-server && pip install --no-cache-dir -r requirements.txt
-  """
-
 [build]
   cmd = "echo 'Build complete'"
 
@@ -20,12 +13,5 @@
   port = "8081"
   # Health check endpoint
   healthcheck = "/health"
-  # Force Python provider (skip Node.js auto-detect)
+  # Force Python provider (skip Node.js auto-detect due to package.json)
   providers = ["python"]
-
-# Environment variables (override in Coolify UI)
-# MCP_API_KEY=***
-# DOCKER_IMAGE=open-computer-use:latest
-# PUBLIC_BASE_URL=https://your-domain.com
-# COMMAND_TIMEOUT=600
-# SUB_AGENT_TIMEOUT=3600
