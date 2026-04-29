@@ -48,6 +48,7 @@ yarn-debug.log*
 yarn-error.log*
 package-lock.json
 yarn.lock
+package.json
 
 # Data directories (data/ mounted as volumes, skills/ copied into image)
 data/
