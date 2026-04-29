@@ -1,8 +1,16 @@
 # Nixpacks configuration for Coolify deployment
 # Deploys the Computer Use MCP Server (computer-use-server/)
+# NOTE: This is a Python project. The package.json is for the workspace Docker image only.
+
+[phases]
+  # Skip npm install — this is a Python project!
+  # The package.json is for the workspace image (Dockerfile), not the MCP server.
+  install = """
+    cd computer-use-server && pip install --no-cache-dir -r requirements.txt
+  """
 
 [build]
-  cmd = "cd computer-use-server && pip install --no-cache-dir -r requirements.txt"
+  cmd = "echo 'Build complete'"
 
 [start]
   cmd = "cd computer-use-server && uvicorn app:app --host 0.0.0.0 --port 8081 --workers 2"
@@ -12,6 +20,8 @@
   port = "8081"
   # Health check endpoint
   healthcheck = "/health"
+  # Force Python provider (skip Node.js auto-detect)
+  providers = ["python"]
 
 # Environment variables (override in Coolify UI)
 # MCP_API_KEY=***
