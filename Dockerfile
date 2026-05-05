@@ -3,7 +3,7 @@
 # Dockerfile for Coolify deployment - Computer Use MCP Server only
 # This builds just the orchestrator (computer-use-server/), NOT the workspace image
 
-FROM python:3.12-slim
+FROM python:3.14-slim
 
 LABEL maintainer="Open Computer Use Contributors"
 LABEL description="Computer Use MCP Server for Coolify deployment"
