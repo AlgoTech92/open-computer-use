@@ -41,7 +41,7 @@ beautifulsoup4==4.14.3
 soupsieve==2.8
 
 # LLM SDKs
-openai>=2.20.0
+openai>=3.42.0
 
 # Markdown and documentation
 markdown-it-py==4.0.0
