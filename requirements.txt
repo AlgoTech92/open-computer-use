@@ -9,7 +9,7 @@ xlsxwriter==3.2.9
 
 # PDF processing
 pypdf==5.9.0
-pdfplumber==0.11.9
+pdfplumber==0.11.10
 pypdfium2==4.30.0
 pikepdf==9.11.0
 pdfkit==1.0.0
